@@ -1,15 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.techprimers.sonar</groupId>
-  <artifactId>sonar-example</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
-  
+	<groupId>com.demo</groupId>
+	<artifactId>sonar-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>com.demo</name>
+	<url>http://maven.apache.org</url>
 <reporting>
-
- <plugins>
+		<plugins>
 			<!-- Normally, we take off the dependency report, saves time. -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -19,20 +21,7 @@
 					<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
 				</configuration>
 			</plugin>
-			
-			
 
-        
-
-		<plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.5</version>
-            <configuration>
-                <webXml>src\main\web\WEB-INF\web.xml</webXml>
-            </configuration>
-        </plugin>
-       
 
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -45,13 +34,25 @@
 					</formats>
 				</configuration>
 			</plugin>
-
+<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			
 		</plugins>
 	</reporting>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	 </properties>
 	
+	</properties>
+	
+
+
 	<dependencies>
 
 		<dependency>
