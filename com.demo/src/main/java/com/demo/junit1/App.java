@@ -4,6 +4,7 @@ package com.demo.junit1;
 
 public class App 
 {
+	System.out.println("...........");
 	public double calculateYearlySalary(EmployeeDetails empDetails){
 		 double yearlySalary=0;
 		 yearlySalary=empDetails.getMonthlySalary()*12;
